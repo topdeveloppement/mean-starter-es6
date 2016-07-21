@@ -1,31 +1,31 @@
 class mainController {
 
-    constructor(todoService) {
-        this.todoService = todoService;
+    constructor(phoneService) {
+        this.phoneService = phoneService;
         this.load();
     }
 
     load() {
-        this.todoService.getAll().then((res) => {
-            this.todos = res.data;
+        this.phoneService.getAll().then((res) => {
+            this.phones = res.data;
         })
     }
 
     create() {
-        this.todoService.create(this.todo).then(() => {
-            this.todo = '';
+        this.phoneService.create(this.phone).then(() => {
+            this.phone = '';
             this.load()
         })
     }
 
-    update(todo) {
-        this.todoService.update(todo._id, todo.description).then(() => {
+    update(phone) {
+        this.phoneService.update(phone._id, phone).then(() => {
             this.load()
         })
     }
 
-    delete(todo) {
-        this.todoService.delete(todo._id).then(() => {
+    delete(phone) {
+        this.phoneService.delete(phone._id).then(() => {
             this.load()
         })
     }

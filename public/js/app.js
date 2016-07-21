@@ -1,5 +1,5 @@
 angular.module('app', ['ngRoute'])
-        .service('todoService', todoService)
+        .service('phoneService', phoneService)
         .controller('mainController', mainController)
         .config(routes)
         ;

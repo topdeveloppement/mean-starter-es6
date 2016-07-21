@@ -1,23 +1,70 @@
-<div class="row">
-    <div class="col-xs-12 col-md-10 col-md-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-        <h2>Create a new todo</h2>
-        <form class="form-inline">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Todo" ng-model='vm.todo'>
-            </div>
-            <button ng-click='vm.create()' class="btn btn-default">Add</button>
-        </form>
-        <h2 ng-show='vm.todos.length>0'>My todos</h2>
-        <div class="panel panel-default" ng-repeat='todo in vm.todos | orderBy: "description"'>
-            <div class="panel-body">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Todo" ng-model='todo.description'>
-                    </div>
-                    <button ng-click='vm.update(todo)' class="btn btn-default">Edit</button>
-                    <button ng-click='vm.delete(todo)' class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="container-fluid">
+		<form id="form_register" class="form-padding form-margin col-lg-offset-4 col-md-offset-4 col-lg-4 col-md-4">
+			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<h2 class="text-center">Mon Annuaire téléphonique</h2>
+				</div>
+			</div>
+			<div class="row">
+				<label for="name" class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">Votre Nom</label>
+				<div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input ng-model='phones.name' class="form-control" id="name" type="text" placeholder="Votre Nom">
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<label for="lastname" class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">Votre Prénom</label>
+				<div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input ng-model='phones.lastname' class="form-control" id="lastname" type="text" placeholder="Votre Prénom">
+					</div>
+				</div>
+				<div id="success-check-lastname" class="success-check col-lg-1 col-md-1"></div>
+				<div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">
+					<div id="output_checklastname"></div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<label for="username" class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">Votre téléphone</label>
+				<div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+						<input ng-model='phones.phone' class="form-control pseudo" id="username" type="tel" placeholder="Votre téléphone">
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+			    <div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10">
+			        <input ng-click="create(contact)" id="loadRegister" class="login btn-success btn btn-lg" type="submit" value="Ajouter" />
+			    </div>
+			</div>
+		</form>
+		<div id="table" class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8">
+			<table class="table table-inverse">
+			  <thead>
+			    <tr>
+			      <th>Index</th>
+			      <th>Nom</th>
+			      <th>Prénom</th>
+			      <th>Téléphone</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr class="table-success" ng-repeat="contact in phones">
+			      <th scope="row"></th>
+			      <td>{{ contact.name }}</td>
+			      <td>{{ contact.lastname }}</td>
+			      <td>{{ contact.phone }}</td>
+			      <td><button ng-click='update(contact)' class="btn btn-default">Update</button></td>
+                  <td><button ng-click='delete(contact)' class="btn btn-danger">Delete</button></td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>

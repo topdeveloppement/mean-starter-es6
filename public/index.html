@@ -1,40 +1,56 @@
-<!DOCTYPE html>
-<html lang="en" ng-app='app'>
-    <head>
+<!doctype html>
+<html ng-app='app'>
+  <head>
+    <title>Repertoire Téléphonique</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+ 
+    <style type="text/css">
+	#table th,
+	#table td {
+		text-align: center;
+	}
+	#table {
+		margin-top: 50px;
+	}
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="assets/img/logo.png">
+	.form-padding {
+	  padding-top: 30px;
+	  padding-bottom: 30px;
+	}
 
-        <title>MEAN Starter ES6</title>
+	.form-margin {
+	  margin-top: 20px;
+	  margin-bottom: 20px;
+	}
 
-        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+	.container-fluid form {
+	  box-shadow: 0px 0px 12px #000;
+	}
 
-    </head>
-    <body>
+	.login {
+	  width: 100%;
+	}
 
-        <ng-include src="'views/navbar.html'"></ng-include>
+    </style>
 
-        <div class="container">
-            <ng-view></ng-view>
-        </div>
+  </head>
+  <body>
 
-        <script src="vendor/jquery/dist/jquery.min.js"></script>
+  <ng-view></ng-view>
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
         <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <script src="vendor/angular/angular.min.js"></script>
         <script src="vendor/angular-route/angular-route.min.js"></script>
 
-        <script src="js/services/todoService.js"></script>
+        <script src="js/services/phoneService.js"></script>
 
         <script src="js/controllers/mainController.js"></script>
 
         <script src="js/routes.js"></script>
 
         <script src="js/app.js"></script>
-
-    </body>
+  </body>
 </html>
